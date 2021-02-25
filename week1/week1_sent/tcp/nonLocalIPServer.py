@@ -1,6 +1,6 @@
 import socket
 
-HOST = "172.16.58.37"
+HOST = "172.16.58.55"
 PORT = 65432
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
