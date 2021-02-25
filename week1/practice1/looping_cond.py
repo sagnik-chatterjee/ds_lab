@@ -6,6 +6,7 @@ elif num==0:
     print("0")
 else:
     print("Neg number")
+
 #2
 x=float(input("Enter a number:"))
 if x<100:
@@ -25,7 +26,6 @@ print("After 5")
 print("Before 6")
 if x==6:
     print("This is 6")
-
 print("After 6 ")
 
 #4
@@ -37,7 +37,6 @@ elif x<10:
     print("Below 10")
 else:
     print("Something else")
-
 print("Done")
 
 #5 nested decisions 
@@ -54,7 +53,7 @@ b=("kid" if age <18 else "adult")
 print(b)
 
 # 7 usage of for loop 
-for vak in [5,4,3,2,1]:
+for val in [5,4,3,2,1]:
     print(val)
 print("Done")
 
@@ -82,14 +81,14 @@ for i in range(1,x+1):
 # 11 calc the largest number in  a array 
 import math
 x=[9,41,12,3,74,15]
-largest = int("inf")
+largest = -12312312
 for i in x:
     if i>largest:
         largest=i 
 print(largest)
 
 ## 12 calc the smallest number in a array 
-smallest=int("-inf")
+smallest=132123
 for i in x:
     if i<smallest:
         smallest=i 
@@ -122,14 +121,14 @@ for i in x:
 print(res)
 
 ## 16 repalce all elementx <20 into 0 ,store the result in different varibale(object
-
+'''
 import numpy as np 
 y=np.zeros(len(x))
 for i in range(len(x)):
     if x[i] >20 :
         y[i]=x[i]
 print(y)
-
+'''
 
 
 
