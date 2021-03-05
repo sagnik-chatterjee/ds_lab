@@ -1,37 +1,11 @@
-##todo 
-dict1= {
-{
-	'Name':'lambda',
-	'Height':180,
-	'Qualification':'B.Sc'
-},
-{
-	'Name':'beta',
-	'Height':160,
-	'Qualification':'B.Tech'
-},{
-	'Name':'alpha',
-	'Height':250,
-	'Qualification':'B.Ed'
-},{
-	'Name':'gamma',
-	'Height':120,
-	'Qualification':'B.Tech'
-},{
-	'Name':'epsilon',
-	'Height':130,
-	'Qualification':'B.Sc'
-},{
-	'Name':'omega',
-	'Height':140,
-	'Qualification':'B.Phil'
-},{
-	'Name':'zeta',
-	'Height':170,
-	'Qualification':'B.Engg'
-},
-}
+import pandas as pd
+dct = {'Name':['H', 'R', 'P'], 'Height':[180, 182, 190], 'Qualification':['BTech', 'BArch', 'BSc']}
+new = pd.DataFrame.from_dict(dct)
+print(new)
 
+address = ['Manipal', 'Udupi', 'Surathkal']
+print("address list:", address)
+#dct['address'] = address
 
-
-
+new.insert(3, "address", address, True)
+print(new)
