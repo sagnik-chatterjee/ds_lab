@@ -1,22 +1,20 @@
-print("List functions and operations ")
-
-list1=[]
-
-for i in range(1,101):
-	#adding eleemnts to the list 
-	list1.append(i)
-##extend the list 
-list1.extend([123,567])
-
-##insert any  elemnt at the given index
-
-list1.insert(90,213213)
-
-
-#pop any element form the list 
-
-list1.pop(100)
-
-## return the pons of the first item of the list that has a value of x 
-print(list1.index(100))
-
+list = ['beta',786,2.23,'lambda',7123.2]
+print("List: ",list)
+print("1st element: ",list[0])
+print("2nd to 4th element: ", list[1:4])
+print("Elements from 3rd posn: ", list[2:])
+print("List * 2: ", list*2)
+print("Concat: ", list + ['party'])
+list.append('john')
+print("List append: ", list)
+del list[2]
+print("Deleted 3rd element: ",list)
+print("Length of list: ",len(list))
+print("Count of 'john' in list: ", list.count('john'))
+print("Last element of list popped: ", list.pop())
+list.insert(3,'party')
+print("Insert 'party' at index 3: ", list)
+list.remove('party')
+print("Remove 'party':", list)
+list.reverse()
+print("Reversed list: ",list)
