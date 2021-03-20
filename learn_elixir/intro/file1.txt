@@ -1,0 +1,4 @@
+name    occupation 
+sagnik  chatterjee
+lambda  calculas
+armadillo ok 
