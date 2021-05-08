@@ -5,35 +5,39 @@ Write a TCP/UDP peer to peer chat system between two different machines.
 
 """
 
+import sys
 import socket
+import threading
 
-HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
-PORT  = 8000 # Port to listen on (non-privileged ports are > 1023)
 
-s = socket.socket()
-s.bind((HOST, PORT))
-s.listen()
+def connect(conn):
+    while True:
+        received = conn.recv(1024)
+        if received == " ":
+            pass
+        else:
+            print(received.decode())
 
-print(f"Peer To Peer Chat Server started at port := {PORT}\n")
-conn, addr = s.accept()
 
-print(f"Received connection from host:= {addr[0]} ,port:=  {addr[1]} \n")
-s_name = conn.recv(1024)
-s_name = s_name.decode()
+def sendMsg(conn):
+    while True:
+        send_msg = input().replace("b", "").encode()
+        if send_msg == " ":
+            pass
+        else:
+            conn.sendall(send_msg)
 
-print(s_name, "has connected to the chat room\nEnter F to exit chat room\n")
-name = input(str("Enter your name: "))
-conn.send(name.encode())
 
-while True:
-    message = input(str("Me : "))
-    if message == "F":
-        message = "Left chat room!"
-        conn.send(message.encode())
-        print("\n")
-    break
-
-conn.send(message.encode())
-message = conn.recv(1024)
-message = message.decode()
-print(s_name, ":", message)
+if __name__ == "__main__":
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    s.bind(("", 10000))
+    s.listen()
+    (conn, addr) = s.accept()
+    print("Server Started...")
+    threada = threading.Thread(target=connect, args=([conn]))
+    threadb = threading.Thread(target=sendMsg, args=([conn]))
+    threada.start()
+    threadb.start()
+    threada.join()
+    threadb.join()
