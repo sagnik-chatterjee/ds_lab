@@ -49,6 +49,6 @@ def initiateSlaveClient(name, port=8080):
 
 if __name__ == "__main__":
 
-    list_clients = ["LAMBDA", "ORION", "DELTA", "FOXTROT"]
+    list_clients = ["KMC", "MIT", "TAMPI", "SOLS"]
     for client in list_clients:
         initiateSlaveClient(client, port=8080)

@@ -37,5 +37,5 @@ def synchronizeTime(device_type):
 
 if __name__ == "__main__":
 
-    synchronizeTime("37.2431° N")
-    synchronizeTime("115.7930° W")
+    synchronizeTime("MOBILE - DEVICE")
+    synchronizeTime("LAPTOP - DEVICE")
