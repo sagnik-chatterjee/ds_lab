@@ -37,5 +37,4 @@ def synchronizeTime(device_type):
 
 if __name__ == "__main__":
 
-    synchronizeTime("MOBILE - DEVICE")
-    synchronizeTime("LAPTOP - DEVICE")
+    synchronizeTime("LAPTOP")
